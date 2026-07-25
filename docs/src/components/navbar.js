@@ -4,7 +4,7 @@ export function renderNavbar(currentRoute) {
   return `
     <div class="navbar bg-base-100 shadow-md">
       <div class="navbar-start">
-        <a href="#/" class="btn btn-ghost text-xl">AJ Golden Wings</a>
+        <a href="#/" class="btn btn-ghost text-xl">ajgoldenwings</a>
       </div>
       <div class="navbar-center hidden lg:flex">
         <ul class="menu menu-horizontal px-1">
