@@ -14,6 +14,7 @@ function getRoute() {
 }
 
 function render() {
+  window.scrollTo(0, 0);
   const route = getRoute();
   let pageContent = '';
 
