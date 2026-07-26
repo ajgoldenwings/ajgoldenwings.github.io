@@ -1,4 +1,4 @@
 @import "tailwindcss";
 @plugin "daisyui" {
-  themes: retro;
+  themes: retro --default, halloween --prefersdark;
 }
