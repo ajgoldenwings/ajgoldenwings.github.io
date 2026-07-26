@@ -32,13 +32,14 @@ export function renderToolsBookmarks() {
 
   return `
     <div>
-      <div class="flex items-center gap-4 mb-6">
-        <h2 class="text-3xl font-bold">Bookmarks</h2>
-        <div class="tabs tabs-boxed">
-          <a href="#/tools/ai" class="tab">AI</a>
-          <a href="#/tools/bookmarks" class="tab tab-active">Bookmarks</a>
-        </div>
+      <div class="breadcrumbs text-sm mb-4">
+        <ul>
+          <li><a href="#/">Home</a></li>
+          <li><a href="#/tools/bookmarks">Tools</a></li>
+          <li>Bookmarks</li>
+        </ul>
       </div>
+      <h2 class="text-3xl font-bold mb-6">Bookmarks</h2>
       <p class="mb-6 text-lg opacity-80">Useful web development resources and communities worth bookmarking.</p>
       <ul class="space-y-3">
         ${linkCards}
