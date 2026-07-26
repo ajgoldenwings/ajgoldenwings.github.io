@@ -15,17 +15,21 @@ export function renderToolsBookmarks() {
   const linkCards = bookmarkLinks
     .map(
       (link) => `
-      <li class="flex items-center gap-4 p-4 bg-base-100 rounded-lg shadow">
-        <div class="flex-1">
-          <a href="${link.url}" target="_blank" rel="noopener noreferrer" class="link link-secondary font-semibold text-lg">
-            ${link.name}
-          </a>
+      <div class="card bg-base-100 shadow-md hover:shadow-lg transition-shadow">
+        <div class="card-body p-5">
+          <h3 class="card-title text-base">
+            <a href="${link.url}" target="_blank" rel="noopener noreferrer" class="link link-secondary link-hover">
+              ${link.name}
+            </a>
+          </h3>
           <p class="text-sm opacity-70">${link.description}</p>
+          <div class="card-actions justify-end mt-2">
+            <a href="${link.url}" target="_blank" rel="noopener noreferrer" class="btn btn-xs btn-secondary btn-outline">
+              Visit &#8599;
+            </a>
+          </div>
         </div>
-        <a href="${link.url}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline btn-secondary">
-          Visit
-        </a>
-      </li>
+      </div>
     `
     )
     .join('');
@@ -39,11 +43,18 @@ export function renderToolsBookmarks() {
           <li>Bookmarks</li>
         </ul>
       </div>
-      <h2 class="text-3xl font-bold mb-6">Bookmarks</h2>
-      <p class="mb-6 text-lg opacity-80">Useful web development resources and communities worth bookmarking.</p>
-      <ul class="space-y-3">
+
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6 gap-2">
+        <div>
+          <h2 class="text-3xl font-bold">Bookmarks</h2>
+          <p class="text-base opacity-70 mt-1">Useful web development resources and communities worth bookmarking.</p>
+        </div>
+        <div class="badge badge-secondary badge-lg">${bookmarkLinks.length} links</div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         ${linkCards}
-      </ul>
+      </div>
     </div>
   `;
 }
