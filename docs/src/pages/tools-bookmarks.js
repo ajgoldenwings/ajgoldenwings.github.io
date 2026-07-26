@@ -15,7 +15,7 @@ export function renderToolsBookmarks() {
   const linkCards = bookmarkLinks
     .map(
       (link) => `
-      <div class="card bg-base-100 shadow-md hover:shadow-lg transition-shadow">
+      <div class="card card-border bg-base-100 shadow-md hover:shadow-lg transition-shadow">
         <div class="card-body p-5">
           <h3 class="card-title text-base">
             <a href="${link.url}" target="_blank" rel="noopener noreferrer" class="link link-hover">
@@ -49,7 +49,7 @@ export function renderToolsBookmarks() {
           <h2 class="text-3xl font-bold">Bookmarks</h2>
           <p class="text-base opacity-70 mt-1">Useful web development resources and communities worth bookmarking.</p>
         </div>
-        <div class="badge badge-neutral badge-lg">${bookmarkLinks.length} links</div>
+        <div class="badge badge-neutral badge-lg shrink-0">${bookmarkLinks.length} links</div>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">

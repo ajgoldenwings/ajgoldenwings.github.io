@@ -18,7 +18,7 @@ export function renderHome() {
     <div class="divider"></div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 py-8">
-      <div class="card bg-base-100 shadow-md">
+      <div class="card card-border bg-base-100 shadow-md">
         <div class="card-body items-center text-center">
           <div class="text-4xl mb-2">&#129302;</div>
           <h3 class="card-title">AI Tools</h3>
@@ -28,7 +28,7 @@ export function renderHome() {
           </div>
         </div>
       </div>
-      <div class="card bg-base-100 shadow-md">
+      <div class="card card-border bg-base-100 shadow-md">
         <div class="card-body items-center text-center">
           <div class="text-4xl mb-2">&#128278;</div>
           <h3 class="card-title">Bookmarks</h3>
@@ -38,7 +38,7 @@ export function renderHome() {
           </div>
         </div>
       </div>
-      <div class="card bg-base-100 shadow-md">
+      <div class="card card-border bg-base-100 shadow-md">
         <div class="card-body items-center text-center">
           <div class="text-4xl mb-2">&#9997;&#65039;</div>
           <h3 class="card-title">About</h3>

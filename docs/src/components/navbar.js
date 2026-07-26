@@ -1,45 +1,29 @@
 export function renderNavbar(currentRoute) {
-  const isToolsRoute = currentRoute.startsWith('/tools');
-
   return `
-    <div class="navbar bg-base-100 sticky top-0 z-50 shadow-sm">
+    <div class="navbar bg-base-100 sticky top-0 z-50">
       <div class="navbar-start">
-        <div class="dropdown lg:hidden">
-          <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
-            </svg>
-          </div>
-          <ul tabindex="0" class="dropdown-content menu menu-sm bg-base-200 rounded-box z-1 mt-3 w-52 p-2 shadow">
-            <li><a href="#/" class="${currentRoute === '/' ? 'active' : ''}">Home</a></li>
-            <li><a href="#/about" class="${currentRoute === '/about' ? 'active' : ''}">About</a></li>
-            <li>
-              <details>
-                <summary class="${isToolsRoute ? 'active' : ''}">Tools</summary>
-                <ul>
-                  <li><a href="#/tools/ai" class="${currentRoute === '/tools/ai' ? 'active' : ''}">AI</a></li>
-                  <li><a href="#/tools/bookmarks" class="${currentRoute === '/tools/bookmarks' ? 'active' : ''}">Bookmarks</a></li>
-                </ul>
-              </details>
-            </li>
-          </ul>
-        </div>
         <a href="#/" class="btn btn-ghost text-xl">ajgoldenwings</a>
       </div>
-      <div class="navbar-center hidden lg:flex">
-        <ul class="menu menu-horizontal px-1">
-          <li><a href="#/" class="${currentRoute === '/' ? 'active' : ''}">Home</a></li>
-          <li><a href="#/about" class="${currentRoute === '/about' ? 'active' : ''}">About</a></li>
-          <li>
-            <details>
-              <summary class="${isToolsRoute ? 'active' : ''}">Tools</summary>
-              <ul class="bg-base-200 rounded-box z-1 p-2 shadow">
-                <li><a href="#/tools/ai" class="${currentRoute === '/tools/ai' ? 'active' : ''}">AI</a></li>
-                <li><a href="#/tools/bookmarks" class="${currentRoute === '/tools/bookmarks' ? 'active' : ''}">Bookmarks</a></li>
-              </ul>
-            </details>
-          </li>
-        </ul>
+      <div class="navbar-center">
+        <div class="megamenu max-sm:megamenu-vertical text-base-content" id="nav-megamenu" popover>
+          <span class="megamenu-active"></span>
+
+          <button class="after:content-none"  popovertarget="nav-pages">Pages</button>
+          <div id="nav-pages" popover>
+            <ul class="menu text-base-content">
+              <li><a href="#/" onclick="document.getElementById('nav-megamenu')?.hidePopover()">Home</a></li>
+              <li><a href="#/about" onclick="document.getElementById('nav-megamenu')?.hidePopover()">About</a></li>
+            </ul>
+          </div>
+
+          <button class="after:content-none" popovertarget="nav-tools">Tools</button>
+          <div id="nav-tools" popover>
+            <ul class="menu text-base-content">
+              <li><a href="#/tools/ai" onclick="document.getElementById('nav-megamenu')?.hidePopover()">AI</a></li>
+              <li><a href="#/tools/bookmarks" onclick="document.getElementById('nav-megamenu')?.hidePopover()">Bookmarks</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
       <div class="navbar-end">
         <label class="swap swap-rotate btn btn-ghost btn-circle">
@@ -51,6 +35,11 @@ export function renderNavbar(currentRoute) {
             <path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z"/>
           </svg>
         </label>
+        <button class="btn btn-ghost btn-circle sm:hidden" popovertarget="nav-megamenu">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
+          </svg>
+        </button>
       </div>
     </div>
   `;
