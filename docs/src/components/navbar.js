@@ -3,7 +3,14 @@ export function renderNavbar(currentRoute) {
 
   return `
     <div class="navbar bg-base-100 sticky top-0 z-50">
-      <div class="navbar-center hidden sm:flex">
+      <div class="navbar-start flex sm:hidden">
+        <button class="btn btn-ghost btn-circle sm:hidden" popovertarget="nav-megamenu">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
+          </svg>
+        </button>
+      </div>
+      <div class="navbar-start hidden sm:flex">
         <ul class="menu menu-horizontal gap-1">
           <li><a href="#/" class="${currentRoute === '/' ? 'active' : ''}">Home</a></li>
           <li><a href="#/about" class="${currentRoute === '/about' ? 'active' : ''}">About</a></li>
@@ -31,13 +38,6 @@ export function renderNavbar(currentRoute) {
             </ul>
           </div>
         </div>
-      </div>
-      <div class="navbar-end">
-        <button class="btn btn-ghost btn-circle sm:hidden" popovertarget="nav-megamenu">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
-          </svg>
-        </button>
       </div>
     </div>
   `;
