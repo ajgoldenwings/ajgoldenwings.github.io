@@ -1,4 +1,5 @@
 import { renderNavbar } from './components/navbar.js';
+import { renderFooter } from './components/footer.js';
 import { renderHome } from './pages/home.js';
 import { renderAbout } from './pages/about.js';
 import { renderToolsAI } from './pages/tools-ai.js';
@@ -36,6 +37,7 @@ function render() {
     <main class="container mx-auto p-6">
       ${pageContent}
     </main>
+    ${renderFooter()}
   `;
 }
 
