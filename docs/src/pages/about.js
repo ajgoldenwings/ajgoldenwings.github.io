@@ -164,42 +164,36 @@ export function renderAbout() {
           <div class="card-body items-center text-center p-5">
             <h3 class="card-title">Vite</h3>
             <p class="text-sm opacity-70">Lightning-fast build tool and dev server</p>
-            <div class="badge badge-neutral badge-outline mt-2">Build</div>
           </div>
         </div>
         <div class="card card-border bg-base-100 shadow-md">
           <div class="card-body items-center text-center p-5">
             <h3 class="card-title">Tailwind CSS 4</h3>
             <p class="text-sm opacity-70">Utility-first CSS framework</p>
-            <div class="badge badge-neutral badge-outline mt-2">Styling</div>
           </div>
         </div>
         <div class="card card-border bg-base-100 shadow-md">
           <div class="card-body items-center text-center p-5">
             <h3 class="card-title">daisyUI 5</h3>
             <p class="text-sm opacity-70">Component library with semantic class names</p>
-            <div class="badge badge-neutral badge-outline mt-2">Components</div>
           </div>
         </div>
         <div class="card card-border bg-base-100 shadow-md">
           <div class="card-body items-center text-center p-5">
             <h3 class="card-title">Kiro</h3>
             <p class="text-sm opacity-70">AI-powered IDE for building with conversation</p>
-            <div class="badge badge-neutral badge-outline mt-2">Development</div>
           </div>
         </div>
         <div class="card card-border bg-base-100 shadow-md">
           <div class="card-body items-center text-center p-5">
             <h3 class="card-title">GitHub</h3>
             <p class="text-sm opacity-70">Source control and collaboration platform</p>
-            <div class="badge badge-neutral badge-outline mt-2">Version Control</div>
           </div>
         </div>
         <div class="card card-border bg-base-100 shadow-md">
           <div class="card-body items-center text-center p-5">
             <h3 class="card-title">GitHub Actions</h3>
             <p class="text-sm opacity-70">Automated CI/CD pipeline for deployment</p>
-            <div class="badge badge-neutral badge-outline mt-2">Deployment</div>
           </div>
         </div>
       </div>

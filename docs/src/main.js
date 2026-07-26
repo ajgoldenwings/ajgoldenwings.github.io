@@ -4,6 +4,8 @@ import { renderHome } from './pages/home.js';
 import { renderAbout } from './pages/about.js';
 import { renderToolsAI } from './pages/tools-ai.js';
 import { renderToolsBookmarks } from './pages/tools-bookmarks.js';
+import { renderPrivacy } from './pages/privacy.js';
+import { renderTerms } from './pages/terms.js';
 
 const app = document.getElementById('app');
 
@@ -27,6 +29,12 @@ function render() {
       break;
     case '/tools/bookmarks':
       pageContent = renderToolsBookmarks();
+      break;
+    case '/privacy':
+      pageContent = renderPrivacy();
+      break;
+    case '/terms':
+      pageContent = renderTerms();
       break;
     default:
       pageContent = renderHome();
