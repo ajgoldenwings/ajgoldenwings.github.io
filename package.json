@@ -1,0 +1,10 @@
+{
+  "name": "ajgoldenwings.github.io-root",
+  "private": true,
+  "scripts": {
+    "dev": "npm run dev --prefix docs",
+    "build": "npm run build --prefix docs",
+    "preview": "npm run preview --prefix docs",
+    "install:docs": "npm install --prefix docs"
+  }
+}
