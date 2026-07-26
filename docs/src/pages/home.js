@@ -2,12 +2,12 @@ export function renderHome() {
   return `
     <div class="hero min-h-[60vh]">
       <div class="hero-content text-center">
-        <div class="max-w-2xl">
-          <h1 class="text-5xl font-bold">Welcome</h1>
-          <p class="py-6 text-lg opacity-80">
+        <div class="max-w-2xl prose prose-lg">
+          <h1>Welcome</h1>
+          <p>
             A personal hub for tools, resources, and everything in between.
           </p>
-          <div class="flex gap-4 justify-center flex-wrap">
+          <div class="flex gap-4 justify-center flex-wrap not-prose">
             <a href="#/tools/ai" class="btn btn-neutral">AI Tools</a>
             <a href="#/tools/bookmarks" class="btn btn-outline">Bookmarks</a>
           </div>
@@ -18,35 +18,23 @@ export function renderHome() {
     <div class="divider"></div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 py-8">
-      <div class="card card-border bg-base-100 shadow-md">
-        <div class="card-body items-center text-center">
-          <div class="text-4xl mb-2">&#129302;</div>
-          <h3 class="card-title">AI Tools</h3>
-          <p class="opacity-70">Curated collection of AI platforms to boost your productivity.</p>
-          <div class="card-actions mt-2">
-            <a href="#/tools/ai" class="btn btn-sm btn-outline">Explore</a>
-          </div>
-        </div>
+      <div class="prose text-center">
+        <p class="text-4xl">&#129302;</p>
+        <h3>AI Tools</h3>
+        <p>Curated collection of AI platforms to boost your productivity.</p>
+        <a href="#/tools/ai" class="btn btn-sm btn-outline not-prose">Explore</a>
       </div>
-      <div class="card card-border bg-base-100 shadow-md">
-        <div class="card-body items-center text-center">
-          <div class="text-4xl mb-2">&#128278;</div>
-          <h3 class="card-title">Bookmarks</h3>
-          <p class="opacity-70">Essential web development resources and communities.</p>
-          <div class="card-actions mt-2">
-            <a href="#/tools/bookmarks" class="btn btn-sm btn-outline">Browse</a>
-          </div>
-        </div>
+      <div class="prose text-center">
+        <p class="text-4xl">&#128278;</p>
+        <h3>Bookmarks</h3>
+        <p>Essential web development resources and communities.</p>
+        <a href="#/tools/bookmarks" class="btn btn-sm btn-outline not-prose">Browse</a>
       </div>
-      <div class="card card-border bg-base-100 shadow-md">
-        <div class="card-body items-center text-center">
-          <div class="text-4xl mb-2">&#9997;&#65039;</div>
-          <h3 class="card-title">About</h3>
-          <p class="opacity-70">Learn more about this site and the tech behind it.</p>
-          <div class="card-actions mt-2">
-            <a href="#/about" class="btn btn-sm btn-outline">Read</a>
-          </div>
-        </div>
+      <div class="prose text-center">
+        <p class="text-4xl">&#9997;&#65039;</p>
+        <h3>About</h3>
+        <p>Learn more about this site and the tech behind it.</p>
+        <a href="#/about" class="btn btn-sm btn-outline not-prose">Read</a>
       </div>
     </div>
 
