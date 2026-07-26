@@ -32,13 +32,14 @@ export function renderToolsAI() {
 
   return `
     <div>
-      <div class="flex items-center gap-4 mb-6">
-        <h2 class="text-3xl font-bold">AI Tools</h2>
-        <div class="tabs tabs-boxed">
-          <a href="#/tools/ai" class="tab tab-active">AI</a>
-          <a href="#/tools/bookmarks" class="tab">Bookmarks</a>
-        </div>
+      <div class="breadcrumbs text-sm mb-4">
+        <ul>
+          <li><a href="#/">Home</a></li>
+          <li><a href="#/tools/ai">Tools</a></li>
+          <li>AI</li>
+        </ul>
       </div>
+      <h2 class="text-3xl font-bold mb-6">AI Tools</h2>
       <p class="mb-6 text-lg opacity-80">A curated collection of AI tools and platforms to boost your productivity.</p>
       <ul class="space-y-3">
         ${linkCards}
