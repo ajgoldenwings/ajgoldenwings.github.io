@@ -8,8 +8,8 @@ export function renderHome() {
             A personal hub for tools, resources, and everything in between.
           </p>
           <div class="flex gap-4 justify-center flex-wrap">
-            <a href="#/tools/ai" class="btn btn-primary">AI Tools</a>
-            <a href="#/tools/bookmarks" class="btn btn-secondary btn-outline">Bookmarks</a>
+            <a href="#/tools/ai" class="btn btn-neutral">AI Tools</a>
+            <a href="#/tools/bookmarks" class="btn btn-outline">Bookmarks</a>
           </div>
         </div>
       </div>
@@ -24,7 +24,7 @@ export function renderHome() {
           <h3 class="card-title">AI Tools</h3>
           <p class="opacity-70">Curated collection of AI platforms to boost your productivity.</p>
           <div class="card-actions mt-2">
-            <a href="#/tools/ai" class="btn btn-sm btn-primary btn-outline">Explore</a>
+            <a href="#/tools/ai" class="btn btn-sm btn-outline">Explore</a>
           </div>
         </div>
       </div>
@@ -34,7 +34,7 @@ export function renderHome() {
           <h3 class="card-title">Bookmarks</h3>
           <p class="opacity-70">Essential web development resources and communities.</p>
           <div class="card-actions mt-2">
-            <a href="#/tools/bookmarks" class="btn btn-sm btn-secondary btn-outline">Browse</a>
+            <a href="#/tools/bookmarks" class="btn btn-sm btn-outline">Browse</a>
           </div>
         </div>
       </div>
@@ -44,7 +44,7 @@ export function renderHome() {
           <h3 class="card-title">About</h3>
           <p class="opacity-70">Learn more about this site and the tech behind it.</p>
           <div class="card-actions mt-2">
-            <a href="#/about" class="btn btn-sm btn-accent btn-outline">Read</a>
+            <a href="#/about" class="btn btn-sm btn-outline">Read</a>
           </div>
         </div>
       </div>
@@ -53,17 +53,17 @@ export function renderHome() {
     <div class="stats shadow w-full mt-4">
       <div class="stat">
         <div class="stat-title">AI Tools</div>
-        <div class="stat-value text-primary">10</div>
+        <div class="stat-value">10</div>
         <div class="stat-desc">Curated picks</div>
       </div>
       <div class="stat">
         <div class="stat-title">Bookmarks</div>
-        <div class="stat-value text-secondary">10</div>
+        <div class="stat-value">10</div>
         <div class="stat-desc">Dev resources</div>
       </div>
       <div class="stat">
         <div class="stat-title">Built with</div>
-        <div class="stat-value text-accent">3</div>
+        <div class="stat-value">3</div>
         <div class="stat-desc">Vite + Tailwind + daisyUI</div>
       </div>
     </div>

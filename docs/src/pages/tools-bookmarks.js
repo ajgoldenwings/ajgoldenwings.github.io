@@ -18,13 +18,13 @@ export function renderToolsBookmarks() {
       <div class="card bg-base-100 shadow-md hover:shadow-lg transition-shadow">
         <div class="card-body p-5">
           <h3 class="card-title text-base">
-            <a href="${link.url}" target="_blank" rel="noopener noreferrer" class="link link-secondary link-hover">
+            <a href="${link.url}" target="_blank" rel="noopener noreferrer" class="link link-hover">
               ${link.name}
             </a>
           </h3>
           <p class="text-sm opacity-70">${link.description}</p>
           <div class="card-actions justify-end mt-2">
-            <a href="${link.url}" target="_blank" rel="noopener noreferrer" class="btn btn-xs btn-secondary btn-outline">
+            <a href="${link.url}" target="_blank" rel="noopener noreferrer" class="btn btn-xs btn-neutral btn-outline">
               Visit &#8599;
             </a>
           </div>
@@ -49,7 +49,7 @@ export function renderToolsBookmarks() {
           <h2 class="text-3xl font-bold">Bookmarks</h2>
           <p class="text-base opacity-70 mt-1">Useful web development resources and communities worth bookmarking.</p>
         </div>
-        <div class="badge badge-secondary badge-lg">${bookmarkLinks.length} links</div>
+        <div class="badge badge-neutral badge-lg">${bookmarkLinks.length} links</div>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
