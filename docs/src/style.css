@@ -5,6 +5,20 @@
 }
 
 /* ===========================
+   GLOBAL RESET - Remove all extra padding/margin
+   =========================== */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+#app {
+  margin: 0;
+  padding: 0;
+}
+
+/* ===========================
    HERO GRADIENT TEXT
    =========================== */
 .hero-gradient-text {
