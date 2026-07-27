@@ -45,9 +45,11 @@ function render() {
       pageContent = renderHome();
   }
 
+  const needsContainer = route !== '/';
+
   app.innerHTML = `
     ${renderNavbar(route)}
-    <main class="container mx-auto p-6">
+    <main class="${needsContainer ? 'container mx-auto px-4 py-6' : ''}">
       ${pageContent}
     </main>
     ${renderFooter()}
