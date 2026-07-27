@@ -2,6 +2,7 @@ import { renderNavbar } from './components/navbar.js';
 import { renderFooter } from './components/footer.js';
 import { renderHome } from './pages/home.js';
 import { renderAbout } from './pages/about.js';
+import { renderTools } from './pages/tools.js';
 import { renderToolsAI } from './pages/tools-ai.js';
 import { renderToolsBookmarks } from './pages/tools-bookmarks.js';
 import { renderPrivacy } from './pages/privacy.js';
@@ -24,6 +25,9 @@ function render() {
       break;
     case '/about':
       pageContent = renderAbout();
+      break;
+    case '/tools':
+      pageContent = renderTools();
       break;
     case '/tools/ai':
       pageContent = renderToolsAI();
