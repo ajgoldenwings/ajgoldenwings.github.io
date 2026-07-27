@@ -19,6 +19,33 @@ html, body {
 }
 
 /* ===========================
+   SKIP LINK - Accessibility
+   =========================== */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  z-index: 9999;
+  padding: 0.75rem 1.5rem;
+  background: var(--color-base-100, #fff);
+  color: var(--color-base-content, #000);
+  font-weight: 600;
+  text-decoration: underline;
+  border: 2px solid currentColor;
+  border-radius: 0 0 0.5rem 0;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Remove outline when main is focused programmatically */
+#main-content:focus {
+  outline: none;
+}
+
+/* ===========================
    HERO GRADIENT TEXT
    =========================== */
 .hero-gradient-text {
@@ -215,4 +242,50 @@ html, body {
 @keyframes marquee {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
+}
+
+
+/* ===========================
+   REDUCED MOTION - Accessibility
+   Disable animations for users who prefer reduced motion.
+   =========================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .hero-orb {
+    animation: none;
+  }
+
+  .marquee-content {
+    animation: none;
+  }
+
+  .hero-gradient-text {
+    animation: none;
+    background-size: 100% 100%;
+  }
+
+  .fade-in-section {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .animate-fade-in-up,
+  .animate-fade-in-down {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .glass-card:hover {
+    transform: none;
+  }
 }
