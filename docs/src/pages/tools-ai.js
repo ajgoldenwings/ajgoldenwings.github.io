@@ -16,14 +16,15 @@ export function renderToolsAI() {
     .map(
       (link) => `
       <li class="list-row">
-        <div class="text-4xl font-thin opacity-30 tabular-nums">${String(aiLinks.indexOf(link) + 1).padStart(2, '0')}</div>
         <div>
-          <div class="font-semibold">${link.name}</div>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 opacity-50">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+          </svg>
+        </div>
+        <div>
+          <a href="${link.url}" target="_blank" rel="noopener noreferrer" class="font-semibold hover:underline">${link.name}</a>
           <div class="text-xs uppercase opacity-60">${link.description}</div>
         </div>
-        <a href="${link.url}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-neutral btn-outline">
-          Visit &#8599;
-        </a>
       </li>
     `
     )
