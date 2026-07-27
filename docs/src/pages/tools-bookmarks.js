@@ -12,24 +12,19 @@ export function renderToolsBookmarks() {
     { name: 'Web.dev', url: 'https://web.dev', description: 'Google guidance on modern web development' },
   ];
 
-  const linkCards = bookmarkLinks
+  const listRows = bookmarkLinks
     .map(
       (link) => `
-      <div class="card card-border bg-base-100 shadow-md hover:shadow-lg transition-shadow">
-        <div class="card-body p-5">
-          <h3 class="card-title text-base">
-            <a href="${link.url}" target="_blank" rel="noopener noreferrer" class="link link-hover">
-              ${link.name}
-            </a>
-          </h3>
-          <p class="text-sm opacity-70">${link.description}</p>
-          <div class="card-actions justify-end mt-2">
-            <a href="${link.url}" target="_blank" rel="noopener noreferrer" class="btn btn-xs btn-neutral btn-outline">
-              Visit &#8599;
-            </a>
-          </div>
+      <li class="list-row">
+        <div class="text-4xl font-thin opacity-30 tabular-nums">${String(bookmarkLinks.indexOf(link) + 1).padStart(2, '0')}</div>
+        <div>
+          <div class="font-semibold">${link.name}</div>
+          <div class="text-xs uppercase opacity-60">${link.description}</div>
         </div>
-      </div>
+        <a href="${link.url}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-neutral btn-outline">
+          Visit &#8599;
+        </a>
+      </li>
     `
     )
     .join('');
@@ -52,9 +47,9 @@ export function renderToolsBookmarks() {
         <div class="badge badge-neutral badge-lg shrink-0">${bookmarkLinks.length} links</div>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        ${linkCards}
-      </div>
+      <ul class="list bg-base-100 rounded-box shadow-md">
+        ${listRows}
+      </ul>
     </div>
   `;
 }
