@@ -35,7 +35,7 @@ export function renderToolsAI() {
       <div class="breadcrumbs text-sm mb-4">
         <ul>
           <li><a href="#/">Home</a></li>
-          <li><a href="#/tools/ai">Tools</a></li>
+          <li><a href="#/tools">Tools</a></li>
           <li>AI</li>
         </ul>
       </div>

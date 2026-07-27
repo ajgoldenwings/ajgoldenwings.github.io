@@ -14,8 +14,7 @@ export function renderNavbar(currentRoute) {
         <ul class="menu menu-horizontal gap-1">
           <li><a href="#/" class="${currentRoute === '/' ? 'active' : ''}">Home</a></li>
           <li><a href="#/about" class="${currentRoute === '/about' ? 'active' : ''}">About</a></li>
-          <li><a href="#/tools/ai" class="${currentRoute === '/tools/ai' ? 'active' : ''}">AI Tools</a></li>
-          <li><a href="#/tools/bookmarks" class="${currentRoute === '/tools/bookmarks' ? 'active' : ''}">Bookmarks</a></li>
+          <li><a href="#/tools" class="${isToolsRoute ? 'active' : ''}">Tools</a></li>
         </ul>
       </div>
       <div class="navbar-center sm:hidden">
@@ -33,6 +32,7 @@ export function renderNavbar(currentRoute) {
           <button class="after:content-none" popovertarget="nav-tools">Tools</button>
           <div id="nav-tools" popover>
             <ul class="menu text-base-content">
+              <li><a href="#/tools" onclick="document.getElementById('nav-megamenu')?.hidePopover()">All Tools</a></li>
               <li><a href="#/tools/ai" onclick="document.getElementById('nav-megamenu')?.hidePopover()">AI Tools</a></li>
               <li><a href="#/tools/bookmarks" onclick="document.getElementById('nav-megamenu')?.hidePopover()">Bookmarks</a></li>
             </ul>

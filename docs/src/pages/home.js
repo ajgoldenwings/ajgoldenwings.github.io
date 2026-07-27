@@ -8,8 +8,8 @@ export function renderHome() {
             A personal hub for tools, resources, and everything in between.
           </p>
           <div class="flex gap-4 justify-center flex-wrap not-prose">
-            <a href="#/tools/ai" class="btn btn-neutral">AI Tools</a>
-            <a href="#/tools/bookmarks" class="btn btn-outline">Bookmarks</a>
+            <a href="#/tools" class="btn btn-neutral">Browse Tools</a>
+            <a href="#/about" class="btn btn-outline">About</a>
           </div>
         </div>
       </div>
@@ -40,14 +40,14 @@ export function renderHome() {
 
     <div class="stats shadow w-full mt-4">
       <div class="stat">
-        <div class="stat-title">AI Tools</div>
-        <div class="stat-value">10</div>
-        <div class="stat-desc">Curated picks</div>
+        <div class="stat-title">Tools</div>
+        <div class="stat-value">20</div>
+        <div class="stat-desc">Across 2 categories</div>
       </div>
       <div class="stat">
-        <div class="stat-title">Bookmarks</div>
-        <div class="stat-value">10</div>
-        <div class="stat-desc">Dev resources</div>
+        <div class="stat-title">Categories</div>
+        <div class="stat-value">2</div>
+        <div class="stat-desc">AI Tools &amp; Bookmarks</div>
       </div>
       <div class="stat">
         <div class="stat-title">Built with</div>
