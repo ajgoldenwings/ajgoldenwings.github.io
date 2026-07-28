@@ -1,0 +1,5 @@
+# robots.txt for ajgoldenwings.github.io
+User-agent: *
+Allow: /
+
+Sitemap: https://ajgoldenwings.github.io/sitemap.xml

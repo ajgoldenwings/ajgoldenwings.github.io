@@ -2,7 +2,7 @@ export function renderFooter() {
   const year = new Date().getFullYear();
 
   return `
-    <footer class="footer bg-base-200 text-base-content p-10 mt-12">
+    <footer class="footer bg-base-200 text-base-content p-10 mt-12" role="contentinfo">
       <nav>
         <h6 class="footer-title">Pages</h6>
         <a href="#/" class="link link-hover">Home</a>
