@@ -485,6 +485,38 @@ Used inside `input`, `select`, `textarea` for floating or inline labels.
 ```
 
 
+### list
+
+List is a vertical layout to display information in rows.
+[list docs](https://daisyui.com/components/list/)
+
+#### Class names
+- component: `list` (vertical flex container for list rows)
+- child: `list-row` (horizontal grid row inside the list)
+- modifier: `list-col-wrap` (pushes a child to the next line), `list-col-grow` (makes a child fill remaining space)
+
+#### Syntax
+```html
+<ul class="list bg-base-100 rounded-box shadow-md">
+  <li class="p-4 pb-2 text-xs opacity-60 tracking-wide">Header text</li>
+  <li class="list-row">
+    <div><img class="size-10 rounded-box" src="{URL}" /></div>
+    <div>
+      <div>Title</div>
+      <div class="text-xs uppercase font-semibold opacity-60">Subtitle</div>
+    </div>
+    <button class="btn btn-square btn-ghost">...</button>
+  </li>
+</ul>
+```
+
+#### Rules
+- By default, the second direct child of `list-row` fills remaining space
+- Use `list-col-grow` on a different child to override which column grows
+- Use `list-col-wrap` on a child to push it to the next line (full-width description row)
+- First `<li>` without `list-row` can serve as a section header
+
+
 ### link
 
 Styled anchor link.
