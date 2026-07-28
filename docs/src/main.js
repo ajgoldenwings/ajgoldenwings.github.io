@@ -61,7 +61,8 @@ function render() {
       pageContent = renderNotFound();
   }
 
-  const needsContainer = route !== '/';
+  const fullWidthRoutes = ['/', '/about'];
+  const needsContainer = !fullWidthRoutes.includes(route);
 
   app.innerHTML = `
     ${renderNavbar(route)}
