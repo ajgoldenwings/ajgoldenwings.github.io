@@ -1009,6 +1009,62 @@ Dock is a fixed bottom navigation bar (mobile-style).
 </div>
 ```
 
+## Layout and Typography
+
+[Layout and Typography docs](https://daisyui.com/docs/layout-and-typography/)
+
+### Layout
+
+Layout, sizing, grids, spacing, and box alignment are handled entirely by Tailwind CSS utility classes. daisyUI does not provide its own layout utilities — use Tailwind directly:
+
+- **Layout**: `container`, `block`, `flex`, `grid`, `hidden`, `overflow-*`
+- **Sizing**: `w-*`, `h-*`, `min-w-*`, `max-w-*`, `min-h-*`, `max-h-*`
+- **Flexbox**: `flex`, `flex-row`, `flex-col`, `items-*`, `justify-*`, `gap-*`
+- **Grid**: `grid`, `grid-cols-*`, `grid-rows-*`, `col-span-*`
+- **Spacing**: `p-*`, `m-*`, `px-*`, `py-*`, `mx-*`, `my-*`, `space-x-*`, `space-y-*`
+
+### Typography (Tailwind Typography plugin)
+
+The `@tailwindcss/typography` plugin provides `prose` classes for styling long-form HTML content (articles, blog posts, markdown-rendered pages). It is fully compatible with daisyUI themes.
+
+#### Usage
+```html
+<article class="prose">
+  <h1>Page Title</h1>
+  <p>Paragraph text with <strong>bold</strong> and <em>italic</em> formatting.</p>
+  <blockquote>A blockquote stands out visually.</blockquote>
+  <ul>
+    <li>List item one</li>
+    <li>List item two</li>
+  </ul>
+  <pre><code>console.log('Hello');</code></pre>
+</article>
+```
+
+#### Size modifiers
+- `prose-sm` – smaller text
+- `prose` – default size
+- `prose-lg` – larger text
+- `prose-xl` – extra large text
+- `prose-2xl` – double extra large text
+
+#### Constraining width
+```html
+<article class="prose max-w-none">...</article> <!-- full width, no max-width constraint -->
+```
+
+#### Using daisyUI colors in prose content
+Apply daisyUI color utilities to text within prose:
+- `text-primary`, `text-secondary`, `text-accent`
+- `text-info`, `text-success`, `text-warning`, `text-error`
+
+#### Rules
+- Use `prose` on a wrapper element (`<article>`, `<div>`, etc.) to style all descendant HTML tags (headings, paragraphs, lists, tables, code, blockquotes)
+- daisyUI themes automatically adjust typography colors for readability
+- Combine with Tailwind size utilities: `prose lg:prose-lg`
+- Tables inside `prose` are styled automatically — no need for the daisyUI `table` class
+- For inline code use backticks in markdown or `<code>` tags; for blocks use `<pre><code>`
+
 ## General Rules
 
 1. Always use daisyUI semantic class names (e.g. `btn`, `card`, `alert`) instead of rebuilding UI with raw Tailwind utilities
