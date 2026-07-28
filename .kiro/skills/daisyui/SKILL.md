@@ -535,6 +535,83 @@ Menu displays a vertical or horizontal list of links/actions.
 </ul>
 ```
 
+### megamenu
+
+Megamenu is a large horizontal menu where each item opens a popover with navigation links. Use once at the top of the page. Uses the Popover API for toggling panels.
+[megamenu docs](https://daisyui.com/components/megamenu/)
+
+#### Class names
+- component: `megamenu`
+- child: `megamenu-active` (visual indicator that moves to the active item)
+- modifier: `megamenu-wide` (popover as wide as the megamenu container), `megamenu-full` (popover fills full page width), `megamenu-vertical` (vertical layout for small screens)
+- size: `megamenu-xs`, `megamenu-sm`, `megamenu-md`, `megamenu-lg`, `megamenu-xl`
+
+#### Syntax
+```html
+<!-- Button to open megamenu on small screens -->
+<button class="btn sm:hidden" popovertarget="my-megamenu">Menu</button>
+
+<div class="megamenu max-sm:megamenu-vertical" id="my-megamenu" popover>
+  <span class="megamenu-active"></span>
+
+  <button popovertarget="section1">Section 1</button>
+  <div id="section1" popover>
+    <ul class="menu">
+      <li><a>Link 1</a></li>
+      <li><a>Link 2</a></li>
+    </ul>
+  </div>
+
+  <button popovertarget="section2">Section 2</button>
+  <div id="section2" popover>
+    <ul class="menu">
+      <li><a>Link 3</a></li>
+      <li><a>Link 4</a></li>
+    </ul>
+  </div>
+</div>
+```
+
+#### Megamenu in a navbar
+```html
+<div class="navbar bg-base-100 shadow-sm">
+  <div class="navbar-start">
+    <a class="btn btn-ghost text-xl">Brand</a>
+  </div>
+  <div class="navbar-center">
+    <div class="megamenu max-sm:megamenu-vertical megamenu-full" id="my-megamenu" popover>
+      <span class="megamenu-active"></span>
+      <button popovertarget="nav1">Products</button>
+      <div id="nav1" popover>
+        <ul class="menu w-full md:menu-horizontal">
+          <li><a>Category</a>
+            <ul>
+              <li><a>Sub item</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-end">
+    <a class="btn">Login</a>
+    <button class="btn sm:hidden" popovertarget="my-megamenu">Menu</button>
+  </div>
+</div>
+```
+
+#### Rules
+- Each `<button popovertarget="ID">` must have a matching `<div id="ID" popover>` with the same unique ID
+- Use `max-sm:megamenu-vertical` to make it vertical on small screens; hide it by default and toggle via a button with `popovertarget`
+- Place the toggle button (for small screens) outside the megamenu with `sm:hidden`
+- Maximum 10 popovers per megamenu
+- HTML IDs must be unique across the page
+- Use `megamenu-wide` when popovers should span the megamenu width
+- Use `megamenu-full` when popovers should span the full page width (good for navbar usage)
+- Add `after:content-none` to buttons to remove dropdown arrows
+- Popover content can contain `menu`, `menu menu-horizontal`, images, or any custom layout
+
+
 ### modal
 
 Modal is a dialog box/popup.
