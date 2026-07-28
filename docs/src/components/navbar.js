@@ -14,14 +14,14 @@ export function renderNavbar(currentRoute) {
         <div id="nav-dropdown" class="p-2 w-56" popover>
             <ul class="menu">
                 <li class="menu-title">Pages</li>
-                <li><a href="#/" class="${currentRoute === '/' ? 'active' : ''}" data-nav-link>Home</a></li>
-                <li><a href="#/about" class="${currentRoute === '/about' ? 'active' : ''}" data-nav-link>About</a></li>
+                <li><a href="#/" class="${currentRoute === '/' ? 'menu-active' : ''}" data-nav-link>Home</a></li>
+                <li><a href="#/about" class="${currentRoute === '/about' ? 'menu-active' : ''}" data-nav-link>About</a></li>
             </ul>
             <ul class="menu mt-1">
                 <li class="menu-title">Tools</li>
-                <li><a href="#/tools" class="${currentRoute === '/tools' && !currentRoute.includes('/tools/') ? 'active' : ''}" data-nav-link>All Tools</a></li>
-                <li><a href="#/tools/ai" class="${currentRoute === '/tools/ai' ? 'active' : ''}" data-nav-link>AI Tools</a></li>
-                <li><a href="#/tools/bookmarks" class="${currentRoute === '/tools/bookmarks' ? 'active' : ''}" data-nav-link>Bookmarks</a></li>
+                <li><a href="#/tools" class="${currentRoute === '/tools' && !currentRoute.includes('/tools/') ? 'menu-active' : ''}" data-nav-link>All Tools</a></li>
+                <li><a href="#/tools/ai" class="${currentRoute === '/tools/ai' ? 'menu-active' : ''}" data-nav-link>AI Tools</a></li>
+                <li><a href="#/tools/bookmarks" class="${currentRoute === '/tools/bookmarks' ? 'menu-active' : ''}" data-nav-link>Bookmarks</a></li>
             </ul>
         </div>
     </nav>
