@@ -81,7 +81,7 @@ export function renderHome() {
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <!-- Card 1: AI Tools -->
-          <a href="#/tools/ai" class="glass-card group fade-in-section">
+          <a href="#/tools/ai" class="group fade-in-section">
             <div class="p-8">
               <div class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -100,7 +100,7 @@ export function renderHome() {
           </a>
 
           <!-- Card 2: Bookmarks -->
-          <a href="#/tools/bookmarks" class="glass-card group fade-in-section">
+          <a href="#/tools/bookmarks" class="group fade-in-section">
             <div class="p-8">
               <div class="w-14 h-14 rounded-2xl bg-secondary/10 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -119,7 +119,7 @@ export function renderHome() {
           </a>
 
           <!-- Card 3: Open Source -->
-          <a href="#/about" class="glass-card group fade-in-section">
+          <a href="#/about" class="group fade-in-section">
             <div class="p-8">
               <div class="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -180,8 +180,8 @@ export function renderHome() {
     <section class="py-24 px-4">
       <div class="max-w-3xl mx-auto text-center fade-in-section">
         <div class="relative">
-          <div class="absolute inset-0 bg-gradient-to-r from-primary/5 via-secondary/5 to-accent/5 rounded-3xl blur-3xl"></div>
-          <div class="relative glass-card p-12 md:p-16">
+          <div class="absolute inset-0 bg-linear-to-r from-primary/35 via-secondary/35 to-accent/35 rounded-3xl blur-3xl"></div>
+          <div class="relative p-12 md:p-16">
             <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to level up?</h2>
             <p class="opacity-60 mb-8 max-w-md mx-auto">Dive into the collection. Every tool has been vetted, every bookmark earned its spot.</p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
