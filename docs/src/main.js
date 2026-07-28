@@ -1,4 +1,4 @@
-import { renderNavbar } from './components/navbar.js';
+import { renderNavbar, initNavbarScrollDismiss } from './components/navbar.js';
 import { renderFooter } from './components/footer.js';
 import { renderHome } from './pages/home.js';
 import { renderAbout } from './pages/about.js';
@@ -72,6 +72,7 @@ function render() {
   `;
 
   initScrollReveal();
+  initNavbarScrollDismiss();
 
   // Move focus to main content on route change for screen reader users
   const mainEl = document.getElementById('main-content');

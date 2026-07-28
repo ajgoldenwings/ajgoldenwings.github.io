@@ -50,3 +50,29 @@ export function renderNavbar(currentRoute) {
     </nav>
   `;
 }
+
+/**
+ * Initializes the navbar scroll-dismiss behavior.
+ * Call this after rendering the navbar to ensure the megamenu
+ * closes when the user scrolls the page.
+ */
+export function initNavbarScrollDismiss() {
+  const megamenu = document.getElementById('nav-megamenu');
+  if (!megamenu) return;
+
+  let scrollHandler = null;
+
+  megamenu.addEventListener('toggle', (e) => {
+    if (e.newState === 'open') {
+      scrollHandler = () => {
+        megamenu.hidePopover();
+      };
+      window.addEventListener('scroll', scrollHandler, { once: true, passive: true });
+    } else {
+      if (scrollHandler) {
+        window.removeEventListener('scroll', scrollHandler);
+        scrollHandler = null;
+      }
+    }
+  });
+}
