@@ -2,12 +2,13 @@ export function renderNavbar(currentRoute) {
   const isToolsRoute = currentRoute.startsWith('/tools');
 
   return `
-    <nav aria-label="Main navigation" class="navbar bg-base-100 sticky top-0 z-50">
+    <nav aria-label="Main navigation" class="navbar bg-base-100 fixed top-0 left-0 right-0 z-50 shadow-sm">
       <div class="navbar-start flex sm:hidden">
-        <button class="btn btn-ghost btn-circle sm:hidden" popovertarget="nav-megamenu" aria-label="Open navigation menu">
+        <button class="btn sm:hidden" popovertarget="nav-megamenu" aria-label="Open navigation menu">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
           </svg>
+          Menu
         </button>
       </div>
       <div class="navbar-start hidden sm:flex">
