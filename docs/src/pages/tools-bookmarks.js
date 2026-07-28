@@ -1,5 +1,6 @@
 export function renderToolsBookmarks() {
   const bookmarkLinks = [
+    { name: 'Anthony James Pearson', url: 'https://anthonyjamespearson.com', description: 'Senior .NET/AWS Engineer & Full-Stack Developer portfolio' },
     { name: 'MDN Web Docs', url: 'https://developer.mozilla.org', description: 'Comprehensive web development documentation' },
     { name: 'Stack Overflow', url: 'https://stackoverflow.com', description: 'Q&A community for programmers' },
     { name: 'Dev.to', url: 'https://dev.to', description: 'Community of software developers' },
