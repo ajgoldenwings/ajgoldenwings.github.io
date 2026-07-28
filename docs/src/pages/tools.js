@@ -16,17 +16,19 @@ export function renderTools() {
     },
   ];
 
-  const cards = toolCategories
+  const listRows = toolCategories
     .map(
       (cat) => `
-      <a href="${cat.route}" class="card bg-base-100 shadow-md hover:shadow-xl transition-shadow cursor-pointer">
-        <div class="card-body items-center text-center">
-          <div class="text-5xl mb-2">${cat.icon}</div>
-          <h3 class="card-title">${cat.name}</h3>
-          <p class="opacity-70">${cat.description}</p>
-          <div class="badge badge-neutral mt-2">${cat.count} items</div>
+      <li class="list-row">
+        <div class="text-4xl">${cat.icon}</div>
+        <div>
+          <a href="${cat.route}" class="font-semibold text-lg hover:underline">${cat.name}</a>
+          <div class="text-xs opacity-60">${cat.description}</div>
         </div>
-      </a>
+        <div class="flex items-center">
+          <span class="badge badge-neutral">${cat.count} items</span>
+        </div>
+      </li>
     `
     )
     .join('');
@@ -45,9 +47,9 @@ export function renderTools() {
         <p class="text-base opacity-70 mt-1">Browse all tool collections and resources in one place.</p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        ${cards}
-      </div>
+      <ul class="list bg-base-100 rounded-box shadow-md">
+        ${listRows}
+      </ul>
     </div>
   `;
 }
