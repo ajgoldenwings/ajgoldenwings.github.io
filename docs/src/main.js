@@ -23,12 +23,17 @@ const ROUTE_TITLES = {
 };
 
 function getRoute() {
-  return window.location.hash.slice(1) || '/';
+  const hash = window.location.hash.slice(1) || '/';
+  // Separate the route path from any in-page anchor (e.g. /tools#externalToolsList)
+  const anchorIndex = hash.indexOf('#');
+  if (anchorIndex !== -1) {
+    return { path: hash.slice(0, anchorIndex), anchor: hash.slice(anchorIndex + 1) };
+  }
+  return { path: hash, anchor: null };
 }
 
 function render() {
-  window.scrollTo(0, 0);
-  const route = getRoute();
+  const { path: route, anchor } = getRoute();
   let pageContent = '';
 
   // Update document title per route
@@ -74,6 +79,16 @@ function render() {
 
   initScrollReveal();
   initNavbarToggle();
+
+  // Scroll to anchor if present, otherwise scroll to top
+  if (anchor) {
+    const anchorEl = document.getElementById(anchor);
+    if (anchorEl) {
+      anchorEl.scrollIntoView({ behavior: 'smooth' });
+    }
+  } else {
+    window.scrollTo(0, 0);
+  }
 
   // Move focus to main content on route change for screen reader users
   const mainEl = document.getElementById('main-content');

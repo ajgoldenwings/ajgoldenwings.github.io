@@ -22,6 +22,7 @@ export function renderNavbar(currentRoute) {
                 <li><a href="#/tools" class="${currentRoute === '/tools' && !currentRoute.includes('/tools/') ? 'menu-active' : ''}" data-nav-link>All Tools</a></li>
                 <li><a href="#/tools/ai" class="${currentRoute === '/tools/ai' ? 'menu-active' : ''}" data-nav-link>AI Tools</a></li>
                 <li><a href="#/tools/bookmarks" class="${currentRoute === '/tools/bookmarks' ? 'menu-active' : ''}" data-nav-link>Bookmarks</a></li>
+                <li><a href="#/tools#externalToolsList" data-nav-link>External Tools</a></li>
             </ul>
         </div>
     </nav>

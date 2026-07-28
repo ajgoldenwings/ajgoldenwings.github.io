@@ -10,7 +10,7 @@ export function renderTools() {
       name: 'Bookmarks',
       route: '#/tools/bookmarks',
       description: 'Essential web development resources, communities, and references worth bookmarking.',
-      count: 10,
+      count: 11,
     },
   ];
 
@@ -72,7 +72,7 @@ export function renderTools() {
         ${listRows}
       </ul>
 
-      <ul class="list bg-base-100 rounded-box shadow-md mt-6">
+      <ul id="externalToolsList" class="list bg-base-100 rounded-box shadow-md mt-6">
         <li class="p-4 pb-2 text-xs opacity-60 tracking-wide">External Tools</li>
         ${externalRows}
       </ul>
