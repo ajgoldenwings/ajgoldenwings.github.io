@@ -22,6 +22,41 @@ const ROUTE_TITLES = {
   '/terms': 'Terms of Use',
 };
 
+// Per-page theme pairs: [lightTheme, darkTheme]
+const ROUTE_THEMES = {
+  '/': ['light', 'dark'],
+  '/about': ['cupcake', 'dracula'],
+  '/tools': ['corporate', 'business'],
+  '/tools/ai': ['winter', 'synthwave'],
+  '/tools/bookmarks': ['garden', 'forest'],
+  '/privacy': ['lofi', 'coffee'],
+  '/terms': ['nord', 'night'],
+  '404': ['lemonade', 'halloween'],
+};
+
+/**
+ * Determines if the user prefers dark mode via system preference.
+ */
+function prefersDarkMode() {
+  return window.matchMedia('(prefers-color-scheme: dark)').matches;
+}
+
+/**
+ * Applies the correct theme to the <html> element based on route and system preference.
+ */
+function applyRouteTheme(route) {
+  const themes = ROUTE_THEMES[route] || ROUTE_THEMES['404'];
+  const [lightTheme, darkTheme] = themes;
+  const theme = prefersDarkMode() ? darkTheme : lightTheme;
+  document.documentElement.setAttribute('data-theme', theme);
+}
+
+// Listen for system color scheme changes and re-apply theme
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+  const { path: route } = getRoute();
+  applyRouteTheme(route);
+});
+
 function getRoute() {
   const hash = window.location.hash.slice(1) || '/';
   // Separate the route path from any in-page anchor (e.g. /tools#externalToolsList)
@@ -35,6 +70,9 @@ function getRoute() {
 function render() {
   const { path: route, anchor } = getRoute();
   let pageContent = '';
+
+  // Apply the per-page theme
+  applyRouteTheme(route);
 
   // Update document title per route
   const pageTitle = ROUTE_TITLES[route] || 'Page Not Found';
