@@ -1,14 +1,7 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 @plugin "daisyui" {
-  themes: light --default, dark --prefersdark,
-    cupcake, dracula,
-    corporate, business,
-    winter, synthwave,
-    garden, forest,
-    lofi, coffee,
-    nord, night,
-    lemonade, halloween;
+  themes: cupcake --default, forest --prefersdark;
 }
 
 /* ===========================
@@ -140,26 +133,12 @@ html, body {
 }
 
 /* Dark theme glass card adjustments */
-[data-theme="dark"] .glass-card,
-[data-theme="dracula"] .glass-card,
-[data-theme="business"] .glass-card,
-[data-theme="synthwave"] .glass-card,
-[data-theme="forest"] .glass-card,
-[data-theme="coffee"] .glass-card,
-[data-theme="night"] .glass-card,
-[data-theme="halloween"] .glass-card {
+[data-theme="forest"] .glass-card {
   background: oklch(0.2 0.02 260 / 0.5);
   border-color: oklch(0.4 0.05 260 / 0.2);
 }
 
-[data-theme="dark"] .glass-card:hover,
-[data-theme="dracula"] .glass-card:hover,
-[data-theme="business"] .glass-card:hover,
-[data-theme="synthwave"] .glass-card:hover,
-[data-theme="forest"] .glass-card:hover,
-[data-theme="coffee"] .glass-card:hover,
-[data-theme="night"] .glass-card:hover,
-[data-theme="halloween"] .glass-card:hover {
+[data-theme="forest"] .glass-card:hover {
   border-color: oklch(0.6 0.2 260 / 0.4);
   box-shadow:
     0 20px 60px oklch(0.5 0.2 260 / 0.1),
