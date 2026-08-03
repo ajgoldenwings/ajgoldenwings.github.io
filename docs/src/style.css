@@ -322,7 +322,7 @@ html, body {
   gap: 0.5rem;
   padding: 1.5rem;
   border-radius: 1rem;
-  background: oklch(0.95 0 0 / 0.5);
+  background: transparent;
   border: 1px solid oklch(0.8 0 0 / 0.25);
   transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   text-decoration: none;
@@ -339,7 +339,7 @@ html, body {
 
 /* Dark theme */
 [data-theme="forest"] .bento-card {
-  background: oklch(0.2 0.02 260 / 0.5);
+  background: transparent;
   border-color: oklch(0.4 0.05 260 / 0.25);
 }
 
