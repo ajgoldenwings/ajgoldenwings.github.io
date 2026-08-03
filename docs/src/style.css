@@ -5,6 +5,15 @@
 }
 
 /* ===========================
+   MAIN CONTENT FOCUS
+   Remove visible focus ring from main landmark — focus is set
+   programmatically for screen readers on route change only.
+   =========================== */
+#main-content:focus {
+  outline: none;
+}
+
+/* ===========================
    HERO GRADIENT TEXT
    Animated gradient text effect — not achievable with Tailwind alone.
    =========================== */
@@ -172,6 +181,81 @@
   .animate-fade-in-down {
     animation: none;
     opacity: 1;
+    transform: none;
+  }
+}
+
+/* ===========================
+   HEALTH CHECK - BENTO CARDS
+   Styles for the website health check tool page.
+   =========================== */
+.health-card {
+  background: oklch(from var(--b1) l c h / 0.6);
+  backdrop-filter: blur(8px);
+}
+
+.health-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px oklch(0 0 0 / 0.08);
+}
+
+.health-message {
+  border-left: 2px solid oklch(from var(--bc) l c h / 0.15);
+  padding-left: 0.75rem;
+}
+
+.health-message.text-error {
+  border-left-color: oklch(from var(--er) l c h / 0.4);
+}
+
+/* Pulse animation for pending cards */
+.health-card:has(.loading) {
+  animation: health-pulse 2s ease-in-out infinite;
+}
+
+@keyframes health-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+/* Smooth entry for new cards */
+@keyframes health-card-enter {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.health-card {
+  animation: health-card-enter 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Stagger cards */
+.health-card:nth-child(1) { animation-delay: 0ms; }
+.health-card:nth-child(2) { animation-delay: 80ms; }
+.health-card:nth-child(3) { animation-delay: 160ms; }
+.health-card:nth-child(4) { animation-delay: 240ms; }
+.health-card:nth-child(5) { animation-delay: 320ms; }
+.health-card:nth-child(6) { animation-delay: 400ms; }
+.health-card:nth-child(7) { animation-delay: 480ms; }
+.health-card:nth-child(8) { animation-delay: 560ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  .health-card {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .health-card:has(.loading) {
+    animation: none;
+  }
+
+  .health-card:hover {
     transform: none;
   }
 }
