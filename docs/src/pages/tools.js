@@ -20,10 +20,10 @@ export function renderTools() {
 
   const externalTools = [
     {
-      name: 'Tax Tools',
-      subtitle: 'State Income Taxes—On Earned Income',
+      name: 'State Income Taxes—On Earned Income',
+      subtitle: 'Compare state earned income tax obligations across different income levels for all 50 US states',
       url: 'https://taxes.anthonyjamespearson.com',
-      description: 'Compare state earned income tax obligations across different income levels for all 50 US states.',
+      description: 'Interactive tax calculator and visualization tool for informed financial planning. Tax data sourced from Tax Foundation state income tax rates (2025 & 2026). Data includes current tax brackets, rates, and standard deductions for accurate tax obligation calculations.',
       icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg>`,
       span: 'col-span-1 sm:col-span-3',
     },
@@ -32,10 +32,10 @@ export function renderTools() {
   const internalCards = internalTools
     .map(
       (tool) => `
-      <a href="${tool.route}" class="bento-card ${tool.span}">
+      <a href="${tool.route}" class="flex flex-col gap-2 p-6 rounded-2xl border border-base-300/25 no-underline text-inherit transition-all duration-300 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] hover:-translate-y-1 hover:shadow-lg hover:border-secondary/30 ${tool.span}">
         <div class="w-10 h-10 flex items-center justify-center rounded-xl bg-primary text-primary-content mb-1">${tool.icon}</div>
-        <h3 class="bento-card-title">${tool.name}</h3>
-        <p class="bento-card-desc">${tool.description}</p>
+        <h3 class="text-base font-bold m-0">${tool.name}</h3>
+        <p class="text-xs opacity-60 m-0 leading-relaxed">${tool.description}</p>
         <div class="badge badge-neutral badge-sm mt-auto">${tool.count} items</div>
       </a>
     `
@@ -45,16 +45,16 @@ export function renderTools() {
   const externalCards = externalTools
     .map(
       (tool) => `
-      <a href="${tool.url}" target="_blank" rel="noopener noreferrer" class="bento-card ${tool.span}">
+      <a href="${tool.url}" target="_blank" rel="noopener noreferrer" class="flex flex-col gap-2 p-6 rounded-2xl border border-base-300/25 no-underline text-inherit transition-all duration-300 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] hover:-translate-y-1 hover:shadow-lg hover:border-secondary/30 ${tool.span}">
         <div class="w-10 h-10 flex items-center justify-center rounded-xl bg-primary text-primary-content mb-1">${tool.icon}</div>
         <div class="flex items-center gap-2">
-          <h3 class="bento-card-title">${tool.name}</h3>
+          <h3 class="text-base font-bold m-0">${tool.name}</h3>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 opacity-50 shrink-0">
             <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
           </svg>
         </div>
         ${tool.subtitle ? `<p class="text-xs opacity-50 -mt-1">${tool.subtitle}</p>` : ''}
-        <p class="bento-card-desc">${tool.description}</p>
+        <p class="text-xs opacity-60 m-0 leading-relaxed">${tool.description}</p>
       </a>
     `
     )
@@ -75,12 +75,12 @@ export function renderTools() {
       </div>
 
       <h3 class="text-lg font-semibold mb-3 opacity-80">Tool Collections</h3>
-      <div class="bento-grid bento-grid-3">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
         ${internalCards}
       </div>
 
       <h3 class="text-lg font-semibold mb-3 mt-8 opacity-80">External Tools</h3>
-      <div class="bento-grid bento-grid-3">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
         ${externalCards}
       </div>
     </div>

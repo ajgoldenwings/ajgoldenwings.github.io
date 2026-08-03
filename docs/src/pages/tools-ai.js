@@ -17,15 +17,15 @@ export function renderToolsAI() {
       (link, i) => {
         const span = i < 2 ? 'col-span-1 sm:col-span-2' : 'col-span-1';
         return `
-        <a href="${link.url}" target="_blank" rel="noopener noreferrer" class="bento-card ${span}">
+        <a href="${link.url}" target="_blank" rel="noopener noreferrer" class="flex flex-col gap-2 p-6 rounded-2xl border border-base-300/25 no-underline text-inherit transition-all duration-300 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] hover:-translate-y-1 hover:shadow-lg hover:border-secondary/30 ${span}">
           <div class="w-10 h-10 flex items-center justify-center rounded-xl bg-primary text-primary-content mb-1">${link.icon}</div>
           <div class="flex items-center gap-2">
-            <h3 class="bento-card-title">${link.name}</h3>
+            <h3 class="text-base font-bold m-0">${link.name}</h3>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-3.5 h-3.5 opacity-40 shrink-0">
               <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
             </svg>
           </div>
-          <p class="bento-card-desc">${link.description}</p>
+          <p class="text-xs opacity-60 m-0 leading-relaxed">${link.description}</p>
         </a>
       `;
       }
@@ -50,7 +50,7 @@ export function renderToolsAI() {
         <div class="badge badge-neutral badge-lg shrink-0">${aiLinks.length} tools</div>
       </div>
 
-      <div class="bento-grid bento-grid-4">
+      <div class="grid grid-cols-1 sm:grid-cols-4 gap-4">
         ${bentoCards}
       </div>
     </div>

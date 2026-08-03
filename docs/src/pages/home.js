@@ -142,36 +142,36 @@ export function renderHome() {
 
     <!-- MARQUEE / TECH STRIP -->
     <section class="py-8 border-y border-base-300/30 overflow-hidden">
-      <div class="marquee-track">
-        <div class="marquee-content">
-          <span class="marquee-item">Vite</span>
-          <span class="marquee-dot"></span>
-          <span class="marquee-item">Tailwind CSS 4</span>
-          <span class="marquee-dot"></span>
-          <span class="marquee-item">daisyUI 5</span>
-          <span class="marquee-dot"></span>
-          <span class="marquee-item">Vanilla JS</span>
-          <span class="marquee-dot"></span>
-          <span class="marquee-item">GitHub Pages</span>
-          <span class="marquee-dot"></span>
-          <span class="marquee-item">GitHub Actions</span>
-          <span class="marquee-dot"></span>
-          <span class="marquee-item">Kiro AI</span>
-          <span class="marquee-dot"></span>
-          <span class="marquee-item">Vite</span>
-          <span class="marquee-dot"></span>
-          <span class="marquee-item">Tailwind CSS 4</span>
-          <span class="marquee-dot"></span>
-          <span class="marquee-item">daisyUI 5</span>
-          <span class="marquee-dot"></span>
-          <span class="marquee-item">Vanilla JS</span>
-          <span class="marquee-dot"></span>
-          <span class="marquee-item">GitHub Pages</span>
-          <span class="marquee-dot"></span>
-          <span class="marquee-item">GitHub Actions</span>
-          <span class="marquee-dot"></span>
-          <span class="marquee-item">Kiro AI</span>
-          <span class="marquee-dot"></span>
+      <div class="flex overflow-hidden whitespace-nowrap">
+        <div class="flex items-center gap-8 animate-[marquee_30s_linear_infinite]">
+          <span class="text-sm font-semibold opacity-50 uppercase tracking-widest">Vite</span>
+          <span class="w-1 h-1 rounded-full bg-current opacity-30 shrink-0"></span>
+          <span class="text-sm font-semibold opacity-50 uppercase tracking-widest">Tailwind CSS 4</span>
+          <span class="w-1 h-1 rounded-full bg-current opacity-30 shrink-0"></span>
+          <span class="text-sm font-semibold opacity-50 uppercase tracking-widest">daisyUI 5</span>
+          <span class="w-1 h-1 rounded-full bg-current opacity-30 shrink-0"></span>
+          <span class="text-sm font-semibold opacity-50 uppercase tracking-widest">Vanilla JS</span>
+          <span class="w-1 h-1 rounded-full bg-current opacity-30 shrink-0"></span>
+          <span class="text-sm font-semibold opacity-50 uppercase tracking-widest">GitHub Pages</span>
+          <span class="w-1 h-1 rounded-full bg-current opacity-30 shrink-0"></span>
+          <span class="text-sm font-semibold opacity-50 uppercase tracking-widest">GitHub Actions</span>
+          <span class="w-1 h-1 rounded-full bg-current opacity-30 shrink-0"></span>
+          <span class="text-sm font-semibold opacity-50 uppercase tracking-widest">Kiro AI</span>
+          <span class="w-1 h-1 rounded-full bg-current opacity-30 shrink-0"></span>
+          <span class="text-sm font-semibold opacity-50 uppercase tracking-widest">Vite</span>
+          <span class="w-1 h-1 rounded-full bg-current opacity-30 shrink-0"></span>
+          <span class="text-sm font-semibold opacity-50 uppercase tracking-widest">Tailwind CSS 4</span>
+          <span class="w-1 h-1 rounded-full bg-current opacity-30 shrink-0"></span>
+          <span class="text-sm font-semibold opacity-50 uppercase tracking-widest">daisyUI 5</span>
+          <span class="w-1 h-1 rounded-full bg-current opacity-30 shrink-0"></span>
+          <span class="text-sm font-semibold opacity-50 uppercase tracking-widest">Vanilla JS</span>
+          <span class="w-1 h-1 rounded-full bg-current opacity-30 shrink-0"></span>
+          <span class="text-sm font-semibold opacity-50 uppercase tracking-widest">GitHub Pages</span>
+          <span class="w-1 h-1 rounded-full bg-current opacity-30 shrink-0"></span>
+          <span class="text-sm font-semibold opacity-50 uppercase tracking-widest">GitHub Actions</span>
+          <span class="w-1 h-1 rounded-full bg-current opacity-30 shrink-0"></span>
+          <span class="text-sm font-semibold opacity-50 uppercase tracking-widest">Kiro AI</span>
+          <span class="w-1 h-1 rounded-full bg-current opacity-30 shrink-0"></span>
         </div>
       </div>
     </section>

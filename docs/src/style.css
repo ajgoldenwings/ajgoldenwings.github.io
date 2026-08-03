@@ -5,48 +5,8 @@
 }
 
 /* ===========================
-   GLOBAL RESET - Remove all extra padding/margin
-   =========================== */
-html, body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-}
-
-#app {
-  margin: 0;
-  padding: 0;
-}
-
-/* ===========================
-   SKIP LINK - Accessibility
-   =========================== */
-.skip-link {
-  position: absolute;
-  top: -100%;
-  left: 0;
-  z-index: 9999;
-  padding: 0.75rem 1.5rem;
-  background: var(--color-base-100, #fff);
-  color: var(--color-base-content, #000);
-  font-weight: 600;
-  text-decoration: underline;
-  border: 2px solid currentColor;
-  border-radius: 0 0 0.5rem 0;
-  transition: top 0.2s ease;
-}
-
-.skip-link:focus {
-  top: 0;
-}
-
-/* Remove outline when main is focused programmatically */
-#main-content:focus {
-  outline: none;
-}
-
-/* ===========================
    HERO GRADIENT TEXT
+   Animated gradient text effect — not achievable with Tailwind alone.
    =========================== */
 .hero-gradient-text {
   background: linear-gradient(135deg, oklch(0.7 0.25 330), oklch(0.7 0.2 260), oklch(0.75 0.2 200));
@@ -64,6 +24,7 @@ html, body {
 
 /* ===========================
    HERO BACKGROUND ORBS
+   Complex positioned/animated decorative blobs.
    =========================== */
 .hero-orb {
   position: absolute;
@@ -110,43 +71,8 @@ html, body {
 }
 
 /* ===========================
-   GLASSMORPHISM CARDS
-   =========================== */
-.glass-card {
-  background: oklch(0.95 0 0 / 0.4);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid oklch(0.8 0 0 / 0.2);
-  border-radius: 1.5rem;
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  display: block;
-  text-decoration: none;
-  color: inherit;
-}
-
-.glass-card:hover {
-  transform: translateY(-6px);
-  box-shadow:
-    0 20px 60px oklch(0 0 0 / 0.08),
-    0 8px 20px oklch(0 0 0 / 0.04);
-  border-color: oklch(0.7 0.15 260 / 0.3);
-}
-
-/* Dark theme glass card adjustments */
-[data-theme="forest"] .glass-card {
-  background: oklch(0.2 0.02 260 / 0.5);
-  border-color: oklch(0.4 0.05 260 / 0.2);
-}
-
-[data-theme="forest"] .glass-card:hover {
-  border-color: oklch(0.6 0.2 260 / 0.4);
-  box-shadow:
-    0 20px 60px oklch(0.5 0.2 260 / 0.1),
-    0 8px 20px oklch(0 0 0 / 0.2);
-}
-
-/* ===========================
    FADE-IN ANIMATIONS
+   Custom keyframe animations used by hero and scroll-reveal.
    =========================== */
 @keyframes fade-in-up {
   from {
@@ -205,43 +131,13 @@ html, body {
 .fade-in-section:nth-child(4) { transition-delay: 300ms; }
 
 /* ===========================
-   MARQUEE / INFINITE SCROLL
+   MARQUEE KEYFRAME
+   The animation used by the inline marquee in home.js.
    =========================== */
-.marquee-track {
-  display: flex;
-  overflow: hidden;
-  white-space: nowrap;
-}
-
-.marquee-content {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  animation: marquee 30s linear infinite;
-}
-
-.marquee-item {
-  font-size: 0.875rem;
-  font-weight: 600;
-  opacity: 0.5;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-
-.marquee-dot {
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: currentColor;
-  opacity: 0.3;
-  flex-shrink: 0;
-}
-
 @keyframes marquee {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
 }
-
 
 /* ===========================
    REDUCED MOTION - Accessibility
@@ -261,10 +157,6 @@ html, body {
     animation: none;
   }
 
-  .marquee-content {
-    animation: none;
-  }
-
   .hero-gradient-text {
     animation: none;
     background-size: 100% 100%;
@@ -280,92 +172,6 @@ html, body {
   .animate-fade-in-down {
     animation: none;
     opacity: 1;
-    transform: none;
-  }
-
-  .glass-card:hover {
-    transform: none;
-  }
-}
-
-
-/* ===========================
-   BENTO GRID
-   =========================== */
-.bento-grid {
-  display: grid;
-  gap: 1rem;
-}
-
-.bento-grid-3 {
-  grid-template-columns: repeat(1, 1fr);
-}
-
-.bento-grid-4 {
-  grid-template-columns: repeat(1, 1fr);
-}
-
-@media (min-width: 640px) {
-  .bento-grid-3 {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .bento-grid-4 {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-/* Bento Card */
-.bento-card {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  padding: 1.5rem;
-  border-radius: 1rem;
-  background: transparent;
-  border: 1px solid oklch(0.8 0 0 / 0.25);
-  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  text-decoration: none;
-  color: inherit;
-}
-
-.bento-card:hover {
-  transform: translateY(-4px);
-  box-shadow:
-    0 12px 40px oklch(0 0 0 / 0.08),
-    0 4px 12px oklch(0 0 0 / 0.04);
-  border-color: oklch(0.7 0.15 260 / 0.3);
-}
-
-/* Dark theme */
-[data-theme="forest"] .bento-card {
-  background: transparent;
-  border-color: oklch(0.4 0.05 260 / 0.25);
-}
-
-[data-theme="forest"] .bento-card:hover {
-  border-color: oklch(0.6 0.2 260 / 0.4);
-  box-shadow:
-    0 12px 40px oklch(0.5 0.2 260 / 0.08),
-    0 4px 12px oklch(0 0 0 / 0.15);
-}
-
-.bento-card-title {
-  font-size: 1rem;
-  font-weight: 700;
-  margin: 0;
-}
-
-.bento-card-desc {
-  font-size: 0.8rem;
-  opacity: 0.6;
-  margin: 0;
-  line-height: 1.4;
-}
-
-/* Reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  .bento-card:hover {
     transform: none;
   }
 }

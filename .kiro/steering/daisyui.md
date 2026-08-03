@@ -8,6 +8,16 @@ fileMatch: "**/*.{html,js,jsx,ts,tsx,vue,svelte,astro,css}"
 
 This project uses **daisyUI 5**, a CSS component library for **Tailwind CSS 4**.
 
+## Styling Priority Order
+
+When styling any element, follow this priority (highest to lowest):
+
+1. **daisyUI classes first** — Use semantic component classes (`btn`, `card`, `alert`, `modal`, etc.) and their modifiers before anything else.
+2. **Tailwind CSS utility classes** — For layout, spacing, sizing, and anything daisyUI doesn't cover, use Tailwind utilities.
+3. **Custom CSS as a last resort** — Only write custom CSS in `style.css` when neither daisyUI nor Tailwind can achieve the desired result.
+
+Always exhaust daisyUI and Tailwind options before adding custom CSS. If you find yourself writing custom CSS, re-check if a daisyUI component/modifier or Tailwind utility already solves it.
+
 ## Key Principles
 
 1. **Use semantic component classes** (`btn`, `card`, `alert`, `modal`, etc.) instead of rebuilding UI from raw Tailwind utilities.
