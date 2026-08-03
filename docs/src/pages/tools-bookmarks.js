@@ -15,7 +15,7 @@ export function renderToolsBookmarks() {
   const linkCards = bookmarkLinks
     .map(
       (link) => `
-      <li class="flex items-center gap-4 p-4 bg-base-100 rounded-lg shadow">
+      <li class="flex items-center gap-4 p-4 rounded-lg">
         <div class="flex-1">
           <a href="${link.url}" target="_blank" rel="noopener noreferrer" class="link link-secondary font-semibold text-lg">
             ${link.name}
