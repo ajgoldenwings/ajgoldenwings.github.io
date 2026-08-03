@@ -33,7 +33,7 @@ export function renderTools() {
     .map(
       (tool) => `
       <a href="${tool.route}" class="bento-card ${tool.span}">
-        <div class="bento-card-icon">${tool.icon}</div>
+        <div class="w-10 h-10 flex items-center justify-center rounded-xl bg-primary text-primary-content mb-1">${tool.icon}</div>
         <h3 class="bento-card-title">${tool.name}</h3>
         <p class="bento-card-desc">${tool.description}</p>
         <div class="badge badge-neutral badge-sm mt-auto">${tool.count} items</div>
@@ -46,7 +46,7 @@ export function renderTools() {
     .map(
       (tool) => `
       <a href="${tool.url}" target="_blank" rel="noopener noreferrer" class="bento-card ${tool.span}">
-        <div class="bento-card-icon">${tool.icon}</div>
+        <div class="w-10 h-10 flex items-center justify-center rounded-xl bg-primary text-primary-content mb-1">${tool.icon}</div>
         <div class="flex items-center gap-2">
           <h3 class="bento-card-title">${tool.name}</h3>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 opacity-50 shrink-0">

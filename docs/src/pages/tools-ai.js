@@ -18,7 +18,7 @@ export function renderToolsAI() {
         const span = i < 2 ? 'col-span-1 sm:col-span-2' : 'col-span-1';
         return `
         <a href="${link.url}" target="_blank" rel="noopener noreferrer" class="bento-card ${span}">
-          <div class="bento-card-icon">${link.icon}</div>
+          <div class="w-10 h-10 flex items-center justify-center rounded-xl bg-primary text-primary-content mb-1">${link.icon}</div>
           <div class="flex items-center gap-2">
             <h3 class="bento-card-title">${link.name}</h3>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-3.5 h-3.5 opacity-40 shrink-0">
