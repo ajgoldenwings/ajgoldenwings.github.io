@@ -1,0 +1,15 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Block Custom CSS Changes",
+      "trigger": "PreToolUse",
+      "description": "Prevents any modifications to CSS files, enforcing the project rule that all styling must use daisyUI and Tailwind utility classes exclusively.",
+      "matcher": "fs_write|str_replace|fs_append",
+      "action": {
+        "type": "agent",
+        "prompt": "STOP — check if this write operation targets a CSS file (*.css). If it does, DO NOT proceed. Custom CSS is strictly forbidden in this project. All styling must use daisyUI component classes and Tailwind CSS utility classes only. Refactor the approach to use inline Tailwind/daisyUI classes instead. If you're adding animations, use Tailwind's animate-* utilities or daisyUI's loading components. If you're adding hover effects, use Tailwind's hover: prefix. Never append to or modify style.css."
+      }
+    }
+  ]
+}

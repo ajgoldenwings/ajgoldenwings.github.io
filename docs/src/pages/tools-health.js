@@ -81,7 +81,7 @@ function renderCard(check) {
   })();
 
   return `
-    <div class="health-card flex flex-col gap-3 p-5 rounded-2xl border border-base-300/25 transition-all duration-300 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] ${check.status === 'healthy' ? 'border-success/20' : ''} ${check.status === 'unhealthy' ? 'border-error/20' : ''} ${check.status === 'error' ? 'border-warning/20' : ''}" data-check-id="${check.id}">
+    <div class="flex flex-col gap-3 p-5 rounded-2xl border border-base-300/25 bg-base-100 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg ${check.status === 'healthy' ? 'border-success/20' : ''} ${check.status === 'unhealthy' ? 'border-error/20' : ''} ${check.status === 'error' ? 'border-warning/20' : ''} ${check.status === 'pending' ? 'animate-pulse' : ''}" data-check-id="${check.id}">
       <div class="flex items-start justify-between gap-3">
         <div class="flex items-center gap-3 min-w-0">
           ${getStatusIcon(check)}
@@ -99,7 +99,7 @@ function renderCard(check) {
         ${check.responseTime != null ? `<span class="badge badge-ghost badge-sm">${check.responseTime}ms</span>` : ''}
         ${check.statusCode != null ? `<span class="badge badge-ghost badge-sm">HTTP ${check.statusCode}</span>` : ''}
       </div>
-      ${check.message ? `<p class="text-xs m-0 leading-relaxed opacity-70 health-message ${check.status === 'error' || check.status === 'unhealthy' ? 'text-error' : ''}">${check.message}</p>` : ''}
+      ${check.message ? `<p class="text-xs m-0 leading-relaxed opacity-70 border-l-2 border-base-300 pl-3 ${check.status === 'error' || check.status === 'unhealthy' ? 'text-error border-error/40' : ''}">${check.message}</p>` : ''}
     </div>
   `;
 }
