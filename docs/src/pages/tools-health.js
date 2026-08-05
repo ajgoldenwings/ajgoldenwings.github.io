@@ -261,14 +261,6 @@ export function renderToolsHealth() {
 
   return `
     <div>
-      <div class="breadcrumbs text-sm mb-4">
-        <ul>
-          <li><a href="#/">Home</a></li>
-          <li><a href="#/tools">Tools</a></li>
-          <li>Health Check</li>
-        </ul>
-      </div>
-
       <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6 gap-2">
         <div>
           <h2 class="text-3xl font-bold">Check Health of Websites</h2>

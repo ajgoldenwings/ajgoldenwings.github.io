@@ -5,15 +5,6 @@
 }
 
 /* ===========================
-   MAIN CONTENT FOCUS
-   Remove visible focus ring from main landmark — focus is set
-   programmatically for screen readers on route change only.
-   =========================== */
-#main-content:focus {
-  outline: none;
-}
-
-/* ===========================
    HERO GRADIENT TEXT
    Animated gradient text effect — not achievable with Tailwind alone.
    =========================== */

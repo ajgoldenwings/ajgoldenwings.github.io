@@ -1,13 +1,6 @@
 export function renderPrivacy() {
   return `
     <div>
-      <div class="breadcrumbs text-sm mb-6">
-        <ul>
-          <li><a href="#/">Home</a></li>
-          <li>Privacy Policy</li>
-        </ul>
-      </div>
-
       <article class="prose max-w-none">
         <h1>Privacy Policy</h1>
         <p><strong>Last updated:</strong> July 2026</p>

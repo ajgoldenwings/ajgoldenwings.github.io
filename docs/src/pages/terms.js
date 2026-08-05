@@ -1,13 +1,6 @@
 export function renderTerms() {
   return `
     <div>
-      <div class="breadcrumbs text-sm mb-6">
-        <ul>
-          <li><a href="#/">Home</a></li>
-          <li>Terms of Use</li>
-        </ul>
-      </div>
-
       <article class="prose max-w-none">
         <h1>Terms of Use</h1>
         <p><strong>Last updated:</strong> July 2026</p>

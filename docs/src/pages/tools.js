@@ -70,13 +70,6 @@ export function renderTools() {
 
   return `
     <div>
-      <div class="breadcrumbs text-sm mb-4">
-        <ul>
-          <li><a href="#/">Home</a></li>
-          <li>Tools</li>
-        </ul>
-      </div>
-
       <div class="mb-6">
         <h2 class="text-3xl font-bold">Tools</h2>
         <p class="text-base opacity-70 mt-1">Browse all tool collections and resources in one place.</p>

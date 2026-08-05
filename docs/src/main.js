@@ -76,7 +76,7 @@ function render() {
 
   app.innerHTML = `
     ${renderNavbar(route)}
-    <main id="main-content" tabindex="-1" role="main" class="${needsContainer ? 'container mx-auto px-4 pt-18 pb-6' : ''}">
+    <main id="main-content" tabindex="-1" role="main" class="outline-none ${needsContainer ? 'container mx-auto px-4 pt-26 pb-6' : ''}">
       ${pageContent}
     </main>
     ${renderFooter()}

@@ -1,13 +1,29 @@
 export function renderNavbar(currentRoute) {
   const isToolsRoute = currentRoute.startsWith('/tools');
 
+  // Build breadcrumb items based on current route
+  const breadcrumbItems = getBreadcrumbs(currentRoute);
+  const showBreadcrumbs = currentRoute !== '/';
+
+  const breadcrumbsHtml = showBreadcrumbs && breadcrumbItems.length > 0
+    ? `<div class="breadcrumbs text-sm ms-3 badge badge-ghost badge-xl">
+            <ul>
+            ${breadcrumbItems.map((item, i) =>
+              i === breadcrumbItems.length - 1
+                ? `<li>${item.label}</li>`
+                : `<li><a href="${item.href}">${item.label}</a></li>`
+            ).join('\n            ')}
+            </ul>
+        </div>`
+    : '';
+
   return `
     <nav aria-label="Main navigation" class="megamenu p-2 fixed top-4 left-4 z-50">
         <span class="megamenu-active"></span>
 
         <button class="after:content-none btn btn-square" popovertarget="nav-dropdown" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-dropdown">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
             </svg>
         </button>
 
@@ -26,8 +42,54 @@ export function renderNavbar(currentRoute) {
                 <li><a href="#/tools#externalToolsList" data-nav-link>External Tools</a></li>
             </ul>
         </div>
+
+        ${breadcrumbsHtml}
     </nav>
   `;
+}
+
+/**
+ * Generates breadcrumb items for a given route.
+ * Returns an array of { label, href } objects.
+ * The last item has no href (it's the current page).
+ */
+function getBreadcrumbs(route) {
+  const routeMap = {
+    '/': [],
+    '/about': [
+      { label: 'Home', href: '#/' },
+      { label: 'About' },
+    ],
+    '/tools': [
+      { label: 'Home', href: '#/' },
+      { label: 'Tools' },
+    ],
+    '/tools/ai': [
+      { label: 'Home', href: '#/' },
+      { label: 'Tools', href: '#/tools' },
+      { label: 'AI' },
+    ],
+    '/tools/bookmarks': [
+      { label: 'Home', href: '#/' },
+      { label: 'Tools', href: '#/tools' },
+      { label: 'Bookmarks' },
+    ],
+    '/tools/health': [
+      { label: 'Home', href: '#/' },
+      { label: 'Tools', href: '#/tools' },
+      { label: 'Health Check' },
+    ],
+    '/privacy': [
+      { label: 'Home', href: '#/' },
+      { label: 'Privacy Policy' },
+    ],
+    '/terms': [
+      { label: 'Home', href: '#/' },
+      { label: 'Terms of Use' },
+    ],
+  };
+
+  return routeMap[route] || [];
 }
 
 /**
