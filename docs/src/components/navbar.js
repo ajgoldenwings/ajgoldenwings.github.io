@@ -39,6 +39,7 @@ export function renderNavbar(currentRoute) {
                 <li><a href="#/tools/ai" class="${currentRoute === '/tools/ai' ? 'menu-active' : ''}" data-nav-link>AI Tools</a></li>
                 <li><a href="#/tools/bookmarks" class="${currentRoute === '/tools/bookmarks' ? 'menu-active' : ''}" data-nav-link>Bookmarks</a></li>
                 <li><a href="#/tools/health" class="${currentRoute === '/tools/health' ? 'menu-active' : ''}" data-nav-link>Health Check</a></li>
+                <li><a href="#/tools/network" class="${currentRoute === '/tools/network' ? 'menu-active' : ''}" data-nav-link>Skill Network</a></li>
                 <li><a href="#/tools#externalToolsList" data-nav-link>External Tools</a></li>
             </ul>
         </div>
@@ -78,6 +79,11 @@ function getBreadcrumbs(route) {
       { label: 'Home', href: '#/' },
       { label: 'Tools', href: '#/tools' },
       { label: 'Health Check' },
+    ],
+    '/tools/network': [
+      { label: 'Home', href: '#/' },
+      { label: 'Tools', href: '#/tools' },
+      { label: 'Skill Network' },
     ],
     '/privacy': [
       { label: 'Home', href: '#/' },

@@ -24,6 +24,14 @@ export function renderTools() {
       count: 4,
       span: 'col-span-1 sm:col-span-1',
     },
+    {
+      name: 'Skill Network Graph',
+      route: '#/tools/network',
+      description: 'Interactive force-directed graph visualizing how tech skills connect — drag, filter, and explore.',
+      icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M7.217 10.907a2.25 2.25 0 1 0 0 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186 9.566-5.314m-9.566 7.5 9.566 5.314m0 0a2.25 2.25 0 1 0 3.935 2.186 2.25 2.25 0 0 0-3.935-2.186Zm0-12.814a2.25 2.25 0 1 0 3.933-2.185 2.25 2.25 0 0 0-3.933 2.185Z" /></svg>`,
+      count: 21,
+      span: 'col-span-1 sm:col-span-2',
+    },
   ];
 
   const externalTools = [
@@ -76,7 +84,7 @@ export function renderTools() {
       </div>
 
       <h3 class="text-lg font-semibold mb-3 opacity-80">Tool Collections</h3>
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      <div class="grid grid-cols-1 sm:grid-cols-4 gap-4">
         ${internalCards}
       </div>
 

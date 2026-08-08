@@ -6,6 +6,7 @@ import { renderTools } from './pages/tools.js';
 import { renderToolsAI } from './pages/tools-ai.js';
 import { renderToolsBookmarks } from './pages/tools-bookmarks.js';
 import { renderToolsHealth } from './pages/tools-health.js';
+import { renderToolsNetwork } from './pages/tools-network.js';
 import { renderPrivacy } from './pages/privacy.js';
 import { renderTerms } from './pages/terms.js';
 import { renderNotFound } from './pages/not-found.js';
@@ -20,6 +21,7 @@ const ROUTE_TITLES = {
   '/tools/ai': 'AI Tools',
   '/tools/bookmarks': 'Bookmarks',
   '/tools/health': 'Check Health of Websites',
+  '/tools/network': 'Skill Network Graph',
   '/privacy': 'Privacy Policy',
   '/terms': 'Terms of Use',
 };
@@ -60,6 +62,9 @@ function render() {
       break;
     case '/tools/health':
       pageContent = renderToolsHealth();
+      break;
+    case '/tools/network':
+      pageContent = renderToolsNetwork();
       break;
     case '/privacy':
       pageContent = renderPrivacy();
